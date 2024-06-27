@@ -15,22 +15,18 @@ findViewById(R.id.fragment1).setOnClickListener(new
 View.OnClickListener() {
 @Override
 public void onClick(View v) {
-FragmentManager fm = getFragmentManager();
-FragmentTransaction fragmentTransaction =
-fm.beginTransaction();
-fragmentTransaction.replace(R.id.layout, first);
-fragmentTransaction.commit();
+getSupportFragmentManager().beginTransaction().replace(R.id.layout,first)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .commit();
 }
 });
 findViewById(R.id.fragment2).setOnClickListener(new
 View.OnClickListener() {
 @Override
 public void onClick(View v) {
-FragmentManager fm = getFragmentManager();
-FragmentTransaction fragmentTransaction =
-fm.beginTransaction();
-fragmentTransaction.replace(R.id.layout, second);
-fragmentTransaction.commit();
+getSupportFragmentManager().beginTransaction().replace(R.id.layout,first)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .commit();
 }
 });
 }
