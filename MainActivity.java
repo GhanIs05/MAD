@@ -1,4 +1,4 @@
-package com.vvit.myapp;
+//package com.vvit.myapp;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
