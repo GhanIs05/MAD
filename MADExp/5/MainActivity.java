@@ -1,4 +1,4 @@
-//package com.vvit.myapp;
+  //package com.vvit.myapp;
 import android.app.Activity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -22,8 +22,10 @@ send.setOnClickListener(new OnClickListener() {
 public void onClick(View v) {
 String phoneNumber = phone.getText().toString();
 String msg = message.getText().toString();
-SmsManager sms = SmsManager.getDefault();
-sms.sendTextMessage(phoneNumber,null,msg,null,null);
+Intent i = new Intent(Intent.ACTION_VIEW);
+i.setData(Uri.parse("sms:"+ph));
+i.putExtra("sms_body",message);
+startActivity(i);
 Toast.makeText(MainActivity.this, "Message Sent",
 Toast.LENGTH_SHORT).show();
 }
